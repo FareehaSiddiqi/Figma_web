@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Sec1 from "@/components/Sec1";
+import Sec2 from "@/components/Sec2";
+import Sec3 from "@/components/Sec3";
+import Sec4 from "@/components/Sec4";
+import Sec5 from "@/components/Sec5";
+import Sec6 from "@/components/Sec6";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 });
-
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +36,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      ><Header/>
+      <Hero />
+      <Sec1 />
+      <Sec2 />
+      <Sec3 />
+      <Sec4 />
+      <Sec5 />
+      <Sec6 />
+      <Footer />
         {children}
       </body>
     </html>
